@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ControlesUsuario"
+             x:Class="ControlesUsuario.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="3">
+            <Label
+            x:Name="lblTitulo" FontSize="18"
+            Text="Búsqueda de usuarios" TextColor="Black"
+            HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+               x:Name="lblSeleccion" FontSize="14"
+               Text="Seleccione el tipo de Fichero: " TextColor="Black"
+               HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+               WidthRequest="100"/>
+
+                <Picker x:Name="pickerSeleccion" SelectedIndex="0"  HorizontalOptions="FillAndExpand">
+                    <Picker.Items>
+                        <x:String>"TXT"</x:String>
+                        <x:String>"XML"</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button
+                x:Name="btnExaminar" HorizontalOptions="EndAndExpand"
+                Text="Examinar" TextColor="Black"
+                BackgroundColor="Green"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label  
+                x:Name="lblBuscarPorNombre" FontSize="14" 
+                Text="Búsqueda: " TextColor="Black" 
+                HorizontalOptions="Fill"
+                WidthRequest="100"/>
+
+                <Entry
+                x:Name="EntryBuscarPorNombre" FontSize="14" 
+                Placeholder="Escriba aquí el nombre a buscar"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label 
+                x:Name="lblEdadMinima" FontSize="14" 
+                Text="Edad mínima: " TextColor="Black" 
+                HorizontalOptions="Fill" WidthRequest="100"/>
+
+                <Entry
+                x:Name="EntryEdadMinima" FontSize="14" 
+                Placeholder="Escriba aquí la edad mínima"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                x:Name="lblEdadMaxima" FontSize="14" 
+                Text="Maxima Edad: " TextColor="Black" 
+                HorizontalOptions="Fill" WidthRequest="100" />
+                <Entry
+                x:Name="EntryEdadMaxima" FontSize="14" 
+                Placeholder="Escriba aquí la edad máxima"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnBuscar" 
+                        HorizontalOptions="CenterAndExpand" 
+                        VerticalOptions="Center"
+                        Text="Aplicar criterio"/>
+            </StackLayout>
+            <ListView x:Name="lvwListaUsuarios"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
